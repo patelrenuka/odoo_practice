@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="school_list_view" model="ir.ui.view">
+        <field name="name">school.list.view</field>
+        <field name="model">school.profile</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id" />
+                <field name="school_seq" widget="handle" />
+                <field name="school_seq_name" />
+                <field name="name" string="list changed in xml" />
+                <field name="email" />
+                <field name="phone" optional="hide"/>
+                <field name="date" />
+                <field name="currency_id" />
+                
+            </tree>
+        </field>
+    </record>
+    <record id="school_form_view" model="ir.ui.view">
+        <field name="name">school.form.view</field>
+        <field name="model">school.profile</field>
+        <field name="arch" type="xml">
+            <form>
+                <button name="specialcommand" type="object" string="Special Command 0 0  vals" />
+                <button name="specialcommand1" type="object" string="Special Command 1 ids  vals" />
+                <button name="specialcommand2" type="object" string="Special Command 2 id  0" />
+                <button name="specialcommand3" type="object" string="Special Command 3 id  0" />
+                <button name="specialcommand4" type="object" string="Special Command 4 id  0" />
+                <button name="specialcommand5" type="object" string="Special Command 5 0 0" />
+                <h1><field name="school_seq_name" nolabel="1" /></h1>
+                <sheet>
+                    <group>
+                    
+                        <group>
+                            <field name="name" string="from xml change name" required="1" placeholder="enter your name" />
+                            <field name="email" required="1" placeholder="@gmail.com" />
+                            <field name="phone" required="1" placeholder="enter your phone number" />
+                            <field name="virtual_class" />
+                            <field name="school_rank" />
+                            <field name="result" string="school result" />
+                            <field name="address" widget="html" />
+                            <field name="auto_rank" />
+                            <field name="currency_id" />
+                        </group>
+                        <group>
+                            <field name="date" />
+                            <field name="datetime" />
+                            <field name="school_type" />
+                            
+                        </group>
+                    </group>
+                    <group>
+                        <field name="document" filename="document_name" />
+                        <field name="document_name" invisible="1" />
+                        <field name="school_image" widget="image" />
+                        <field name="school_description" widget="html" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="school_kanban_view" model="ir.ui.view">
+      <field name="name">school.kanban.view</field>
+      <field name="model">school.profile</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="name" />
+          <field name="email" />
+          <field name="school_type" />
+          <templates>
+            <t t-name="kanban-box">
+              <!-- <div class="oe_kanban_card">   OR -->
+              <!-- global click used to click any link then show view page -->
+                <div class="oe_kanban_global_click">
+                    <div class="oe_kanban_details d-flex flex-column">
+                        <!-- <span t-esc="record.name.raw_value"/>
+                        <span t-esc="record.email.raw_value"/>
+                        <span t-esc="record.school_type.raw_value"/> OR  -->
+                        <strong>
+                            <field name="name" />
+                        </strong>
+                        <ul>
+                            <!-- <li>Name: <field name="name" /></li> -->
+                            <li>Email:<field name="email" /></li>
+                            <li>School Name:<field name="school_type" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <record id="action_school_profile" model="ir.actions.act_window">
+        <field name="name">School Profile</field>
+        <field name="res_model">school.profile</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <menuitem id="school_root_menu" name="School" web_icon="school.static/description/icon.png" />
+    <menuitem id="school_sub_menu" parent="school_root_menu" name="School Profile" />
+    <menuitem id="school_profile_menu" action="action_school_profile" parent="school_sub_menu" />
+
+
+   <!-- School Student Profile -->
+
+   <record id="school_list_student_security_view" model="ir.ui.view">
+        <field name="name">school.list.student.security.view</field>
+        <field name="model">school.student.profile.security.example</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="email" />
+                <field name="phone" />
+                
+            </tree>
+        </field>
+    </record>
+    <record id="school_form_student_security_view" model="ir.ui.view">
+        <field name="name">school.form.student.security.view</field>
+        <field name="model">school.student.profile.security.example</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="name"/>
+                <field name="email" />
+                <field name="phone" />
+                
+            </form>
+        </field>
+    </record>
+
+    <!-- <record id="school_kanban_view" model="ir.ui.view">
+      <field name="name">school.kanban.view</field>
+      <field name="model">sschool.student.profile.security.example</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="name" />
+          <field name="email" />
+          <field name="school_type" />
+          <templates>
+            <t t-name="kanban-box"> -->
+              <!-- <div class="oe_kanban_card">   OR -->
+              <!-- global click used to click any link then show view page -->
+                <!-- <div class="oe_kanban_global_click">
+                    <div class="oe_kanban_details d-flex flex-column"> -->
+                        <!-- <span t-esc="record.name.raw_value"/>
+                        <span t-esc="record.email.raw_value"/>
+                        <span t-esc="record.school_type.raw_value"/> OR  -->
+                        <!-- <strong>
+                            <field name="name" />
+                        </strong>
+                        <ul> -->
+                            <!-- <li>Name: <field name="name" /></li> -->
+                            <!-- <li>Email:<field name="email" /></li>
+                            <li>School Name:<field name="school_type" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record> -->
+
+    <record id="action_school_student_security_profile" model="ir.actions.act_window">
+        <field name="name">School Student Profile</field>
+        <field name="res_model">school.student.profile.security.example</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="school_student_security_profile_menu" name="School Student Security" action="action_school_student_security_profile" parent="school_sub_menu" />
+
+</odoo>
