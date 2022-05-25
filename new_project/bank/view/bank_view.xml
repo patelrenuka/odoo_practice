@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="bank_details_view_tree" model="ir.ui.view">
+        <field name="name">bank.details.view.tree</field>
+        <field name="model">bank_details</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id" />
+                <field name="name" />   
+                <field name="branch"/>
+                <field name="phone_no" />
+                <field name="priority" widget="badge" decoration-info="priority in ('1','2')" decoration-success="priority =='3'" />
+              
+            </tree>
+        </field>
+    </record>
+
+    <record id="bank_details_view_form" model="ir.ui.view">
+        <field name="name">bank.details.view.form</field>
+        <field name="model">bank_details</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    
+                </header>
+                <sheet>
+                    <field name="priority" widget="priority" />
+                    <group>
+                        <group>
+                            <field name="name" />    
+                            <field name="branch" required='1'/>   
+                            <field name="IFSC" />
+                            <field name="bank_types" />
+                            
+                        </group>
+                        <group>
+                            <field name="account_no" />
+                            <field name="bank_address" />
+                            <field name="phone_no" />  
+                            <!-- <field name="progress" widget="gauge" options="{'max_field': 'target_goal', 'label_field': 'definition_suffix', 'style': 'width:160px; height: 120px;'}" /> -->
+                            <field name="progress" widget="percentpie" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="bank_details_action" model="ir.actions.act_window">
+        <field name="name">Bank Details</field>
+        <field name="res_model">bank_details</field>
+        <field name="view_mode">list,form</field>
+        
+    </record>
+
+    <menuitem id="bank_details_menu_root" name="Bank"/>
+
+    <menuitem id="bank_sub_menu" name="Bank Details" parent="bank_details_menu_root"/>
+    <menuitem id="bank_details_menu" action="bank_details_action" parent="bank_sub_menu" />
+    
+
+</odoo>
