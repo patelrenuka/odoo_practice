@@ -32,8 +32,7 @@
                 </header>
                 <sheet>
                     <group>
-                        <group>
-                            <field name="customer_bank_name" />    
+                        <group> 
                             <field name="customer_name" required='1'/>   
                             <field name="customer_email" string="Customer Email Id" />
                             <field name="phone_no" />
@@ -72,7 +71,7 @@
     <menuitem id="customer_details_menu_root" name="Customer"/>
 
     <menuitem id="details_sub_menu" name="Customer Details" parent="customer_details_menu_root"/>
-    <menuitem id="customer_details_menu" action="customer_action" parent="details_sub_menu" />
+    <menuitem id="customer_details_menu" action="customer.customer_action" parent="details_sub_menu" />
         
        
         

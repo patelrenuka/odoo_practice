@@ -24,7 +24,8 @@
     # always loaded
     'data': [
         "view/customer_view.xml",
-        "security/ir.model.access.csv"
+        "security/ir.model.access.csv",
+        "view/inherit_bank_view.xml"
     ],
     # only loaded in demonstration mode
     'demo': [

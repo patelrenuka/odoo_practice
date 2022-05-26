@@ -12,7 +12,6 @@ import re
 class customer(models.Model):
     _name = "customer.details"
  
-    customer_bank_name = fields.Char(string="Bank Name", readonly=True,default="SBI")
     customer_name = fields.Char(string="Name" ,help="This is Customer Name",size=14)
     customer_email = fields.Char(string="Email",require=True)
     phone_no = fields.Char(string="Phone_No")
@@ -80,3 +79,8 @@ class customer(models.Model):
         for rec in self:
             rec.state = 'draft'
 
+
+class bankInherit(models.Model):
+    _inherit = "bank_details" 
+
+    bank_manager_name= fields.Char(string="Manager Name")

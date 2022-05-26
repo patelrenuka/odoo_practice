@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="bank.bank_details_menu" model="ir.ui.menu">
+        <field name="name">Bank</field>
+       
+    </record>
+
+    <record id="bank_inherit_view" model="ir.ui.view">
+        <field name="name">bank.inherit.view</field>
+        <field name="model">bank_details</field>
+        <field name="inherit_id" ref="bank.bank_details_view_form" />
+        <field name="arch" type="xml">
+            <field name="bank_address" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="bank.bank_details_action" model="ir.actions.act_window">
+         <field name="name">Bank Records</field>
+    </record>
+
+    <record id="bankmodels_inherit_view" model="ir.ui.view">
+        <field name="name">bankmodels.inherit.view</field>
+        <field name="model">bank_details</field>
+        <field name="inherit_id" ref="bank.bank_details_view_form" />
+        <field name="arch" type="xml">
+            <field name="bank_types" position="after">
+                <field name='bank_manager_name' />
+            </field>
+        </field>
+    </record>
+
+</odoo>

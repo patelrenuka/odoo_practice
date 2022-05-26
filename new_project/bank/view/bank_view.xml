@@ -53,10 +53,13 @@
         
     </record>
 
+    
+
     <menuitem id="bank_details_menu_root" name="Bank"/>
 
     <menuitem id="bank_sub_menu" name="Bank Details" parent="bank_details_menu_root"/>
     <menuitem id="bank_details_menu" action="bank_details_action" parent="bank_sub_menu" />
     
+  
 
 </odoo>
