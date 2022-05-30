@@ -10,7 +10,7 @@
                 <field name="branch"/>
                 <field name="phone_no" />
                 <field name="priority" widget="badge" decoration-info="priority in ('1','2')" decoration-success="priority =='3'" />
-              
+                <!-- <field name="progress" widget="percentpie" /> -->
             </tree>
         </field>
     </record>
@@ -24,6 +24,11 @@
                     
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box" >
+                        <button class="oe_stat_button" type="object" name="action_view_bank_rating" >
+                            <field name="progress" string="customer_age"  widget="statinfo"/>
+                        </button>
+                    </div>
                     <field name="priority" widget="priority" />
                     <group>
                         <group>

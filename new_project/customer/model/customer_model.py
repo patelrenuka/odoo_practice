@@ -2,7 +2,7 @@ from email.policy import default
 import string
 from attr import field
 from pkg_resources import require
-from odoo import models, fields,api
+from odoo import models, fields,api,_
 from datetime import date,datetime
 from dateutil import relativedelta
 import phonenumbers
@@ -60,6 +60,8 @@ class customer(models.Model):
         for rec in self:
             if len(rec.customer_name) < 4:
                 raise ValidationError('name should be Four Characters')
+
+    
 
     # state activate
     def action_in_process(self):
