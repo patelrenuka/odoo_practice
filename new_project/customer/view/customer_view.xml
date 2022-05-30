@@ -6,10 +6,16 @@
         <field name="model">customer.details</field>
         <field name="arch" type="xml">
             <tree>
+            <header>
+                <button name="action_done" string="Mark As Done" class="oe_highlight" type="object" states="draft"  />
+                <button name="action_cancel" string="Cancel" class="oe_highlight" type="object" states="draft,in_process" />
+               
+            </header>
                 <field name="customer_name" />   
                 <field name="customer_email"/>
                 <field name="phone_no" />
                 <field name="status" invisible="1" /> 
+                <field name="state" />
                 <!-- <field name="customer_address" />
                 <field name="birth_date" />
                 <field name="aadhar_no" />  -->
@@ -30,6 +36,7 @@
                       <!-- options="{'clickable':'1'}"  click event in state-->
                     <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,in_process,done" />
                 </header>
+                <button name="search_record" string="Search" type="object" />
                 <sheet>
                     <group>
                         <group> 

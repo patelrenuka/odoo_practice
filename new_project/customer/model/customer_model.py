@@ -66,7 +66,7 @@ class customer(models.Model):
         for rec in self:
             rec.state = 'in_process'
 
-    def action_done(self):
+    def action_done(self):  
         for rec in self:
             rec.state = 'done'
 
@@ -79,6 +79,39 @@ class customer(models.Model):
         for rec in self:
             rec.state = 'draft'
 
+    # ORM
+
+    def search_record(self):
+        for rec in self:
+            customers =self.env['customer.details'].search([])
+            # print("customer:",customers)
+            customers_total = self.env['customer.details'].search_count([])
+            # print("total Customer Record",customers_total)
+            browse_result = self.env['customer.details'].browse(5)
+            # Orr
+            browse_result = self.env['customer.details'].search([('id','=','2')])
+            print("browse history:",browse_result)
+            # if browse_result.exists():
+            #     print("Existing this id ")
+            # else:
+            #     print("This id not existing in record")
+
+            vals ={
+                'customer_name':'girija',
+                'customer_email':'giri@gmail.com',
+                'phone_no':'8855997744'
+
+            }
+            created_record = self.env['customer.details'].create(vals)
+            print("new created record",created_record,created_record.id)
+
+            update_record = self.env['customer.details'].browse(3)
+            if update_record.exists():
+                vals={
+                    'customer_email':'girija@gmail.com',
+                    'customer_address':'Ahmedabad0'
+                }
+                update_record.write(vals)
 
 class bankInherit(models.Model):
     _inherit = "bank_details" 
