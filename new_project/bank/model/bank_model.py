@@ -20,6 +20,7 @@ class bank_Details(models.Model):
                                 ('3','Very High')
                                 ],string="Priority")
     progress = fields.Integer(string="Progress",compute="_compute_progress")
+    customer_id  = fields.Many2one("customer.details",string="Customer")
     _sql_constraints = [('unique_name','unique(name)','Please provide other name,Given name already exitss.')]
 
 
@@ -51,7 +52,17 @@ class bank_Details(models.Model):
             else:
                 progress=0
             rec.progress=progress
-            
+
+    def action_view_bank_rating(self):
+        return {
+            'name':_('Bank'),
+            'res_model':'bank_details',
+            'view_mode':'list,form',
+            'context':{},
+            'domain':[('id','=',self.id)],
+            'target':'current',
+            'type':'ir.actions.act_window',
+        }
     
 
 

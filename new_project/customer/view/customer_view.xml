@@ -33,11 +33,13 @@
                     <button name="action_done" string="Mark AsDone" class="oe_highlight" type="object" states="in_process" />
                     <button name="action_cancel" string="Cancel" class="oe_highlight" type="object" states="draft,in_process" />
                     <button name="action_draft" string="Reset To Draft" class="oe_highlight" type="object" states="cancel" />
+                    <button name="%(action_create_pan_number)d" id="create_pan_number_wizard" string="Added Pan number" classs="btn-primary" type="action" />
                       <!-- options="{'clickable':'1'}"  click event in state-->
                     <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,in_process,done" />
                 </header>
                 <button name="search_record" string="Search" type="object" />
                 <sheet>
+                    
                     <group>
                         <group> 
                             <field name="customer_name" required='1'/>   

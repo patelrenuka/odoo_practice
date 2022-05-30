@@ -23,8 +23,9 @@
 
     # always loaded
     'data': [
-        "view/customer_view.xml",
         "security/ir.model.access.csv",
+        "wizard/pan_number_wizard_view.xml",
+        "view/customer_view.xml",
         "view/inherit_bank_view.xml"
     ],
     # only loaded in demonstration mode

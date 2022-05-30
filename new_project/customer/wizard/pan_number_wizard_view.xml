@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_create_pan_number_vizard_form" model="ir.ui.view">
+            <field name="name">view.create.pan.number.vizard.form</field>
+            <field name="model">pan_number.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="customer_name" />
+                        <field name="pan_number" />
+                    </group>
+                
+                    <footer>
+                        <button name="action_create_pan" type="object" string="Create" class="btn-primary" />
+                        <button string="Cancel" class="btn-secondary" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_create_pan_number" model="ir.actions.act_window">
+            <field name="name">Added PAN Number</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pan_number.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_create_pan_number_vizard_form" />
+            <field name="target">new</field>
+        </record>
+
+        <record id="pan_number_action_window" model="ir.actions.act_window" >
+            <field name="name">PAN Number</field>
+            <field name="res_model">pan_number.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="customer.view_create_pan_number_vizard_form" />
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="model_customer_details" />
+            <field name="binding_view_types">list,form</field>
+       </record>
+
+    </data>
+   
+    <menuitem id="pan_number_menu" name="PAN number" action="customer.action_create_pan_number" parent="details_sub_menu" />
+
+</odoo>
