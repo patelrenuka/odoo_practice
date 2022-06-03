@@ -81,6 +81,25 @@ class customer(models.Model):
         for rec in self:
             rec.state = 'draft'
 
+    def action_test(self):
+        return{
+            'effect': {
+                'fadeout':'slow',
+                'message':'Click Successfully...',
+                'type':'rainbow_man',
+
+            }
+        }
+    
+    def url_action(self):
+        return{
+            'type':'ir.actions.act_url',
+            'target':'self',
+            'url':'https://www.odoo.com'
+        }
+
+    
+
     # ORM
 
     def search_record(self):

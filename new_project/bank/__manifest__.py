@@ -25,6 +25,7 @@
     'data': [
        "view/bank_view.xml",
        "security/ir.model.access.csv",
+       "security/security_access_bdata.xml",
     
     ],
     # only loaded in demonstration mode
