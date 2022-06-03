@@ -61,6 +61,10 @@
                             <field name="age" />
                             <field name="aadhar_no" />  
                             <field name="status" />
+                            <button name="action_test" string="Object Button" type="object" help="Amessage will be printed in the log" 
+                                    groups="base.group_no_one" confirm="Are you sure to execute python code?" class="oe_highlight" />
+                            <button name="url_action" string="Url Button" type="object" help="on clicking this button" 
+                                    groups="base.group_no_one" confirm="Are you sure redirect to odoo page ?" class="oe_highlight" />
                         </group>
                     </group>
                 </sheet>
@@ -75,6 +79,22 @@
         <field name="res_model">customer.details</field>
         <field name="view_mode">list,form</field>
         
+    </record>
+
+    <!-- server action -->
+
+    <record id="action_as_process" model="ir.actions.server">
+        <field name="name">Mark As In-process</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="model_customer_details" />
+        <field name="binding_model_id" ref="model_customer_details" />
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+            for record in records:
+                if record.state == 'draft':
+                    record.action_in_process()
+        </field>
     </record>
 
     <menuitem id="customer_details_menu_root" name="Customer"/>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="bank_group_category" model="ir.module.category">
+        <field name="name">Bank Profile</field>
+    </record>
+
+    <record id="access_bank_customer_group" model="res.groups">
+        <field name="name">Customer Bank Profile</field>
+        <field name="category_id" ref="base.module_category_hidden" />
+    </record>
+    <record id="access_bank_customer_extra_group" model="res.groups">
+        <field name="name">Customer Bank Profile 1</field>
+        <field name="category_id" ref="base.module_category_hidden" />
+    </record>
+    <record id="access_bank_customer_extra_second_group" model="res.groups">
+        <field name="name">Customer Bank Profile 2</field>
+        <field name="category_id" ref="base.module_category_accounting" />
+    </record>
+</odoo>
