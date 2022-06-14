@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1" >
+
+    <record id="customer_10" model="customer.details">
+        <field name="customer_name">maduri</field>
+        <field name="customer_email">maduri@gmail.com</field>
+        <field name="phone_no">9965489321</field>
+        <field name="customer_address">mumbai</field>
+        <field name="bank_id" ref="bank.bank_1"/>
+        <field name="age">20</field>
+    </record>
+
+    <record id="customer_11" model="customer.details">
+        <field name="customer_name">yamini</field>
+        <field name="customer_email">yami@gmail.com</field>
+        <field name="bank_id" ref="bank.bank_1"/>
+        <field name="age">20</field>
+        <field name="customer_address">mumbai</field>
+    </record>
+
+</odoo>

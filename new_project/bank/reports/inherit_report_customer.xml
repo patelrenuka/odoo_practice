@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="customer_report_inherit" inherit_id="customer.customer_report">
+        <xpath expr="//p[@t-field='o.bank_id']" position="after" >
+            <div class="col-xs-8" id="test_inherit">
+               <tr>
+                    <td>
+                        <p style="text-align:right;" ><strong>Status:</strong></p>
+                    </td>
+                    <td>
+                        <p style="text-align:left;padding-left:10px;" t-field="o.state" />
+                    </td>
+                </tr>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

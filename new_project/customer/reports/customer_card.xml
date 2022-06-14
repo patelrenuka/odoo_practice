@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- <template id="customer_report_cards">
+        <t t-call= "web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <h2>Customer Card</h2>
+            </t>
+        </t>
+    </template> -->
+
+    <template id="customer_report">
+        <t t-call= "web.html_container">
+            <t t-foreach="docs" t-as="o">
+                
+                <!-- <t t-call="customer.customer_report_cards"/> -->
+               <t t-call="web.external_layout" t-lang="en_US">
+                    <h2>Customer Informations</h2>
+                    <div class="page">
+                        <div class="oe_structure" />
+                        <!-- <div class="row" >
+                            <div class="col-xs-2" style="margin:auto;" >
+                            </div> -->
+                            <center>
+                                <div class="col-xs-8" style="margin:auto">
+                                    <table class="table table-condensed" style="border:3px solid black !important;" >
+                                        <tr>
+                                            <td width="40%">
+                                                <p style="text-align:center;" >
+                                                    <h2><strong><span t-field="o.customer_name" /></strong></h2>
+                                                </p>
+                                            </td>
+                                            <td width="60%" >
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <p style="text-align:right;" ><strong>Email:</strong></p>
+                                                            <p style="text-align:right;" ><strong>Phone No:</strong></p>
+                                                            <p style="text-align:right;" ><strong>Address:</strong></p>
+                                                            <p style="text-align:right;" ><strong>Birth Date:</strong></p>
+                                                            <p style="text-align:right;" ><strong>Bank Name:</strong></p>
+                                                        </td>
+                                                        <td>
+                                                            <p style="text-align:left;padding-left:10px;" t-field="o.customer_email" />
+                                                            <p style="text-align:left;padding-left:10px;" t-field="o.phone_no" />
+                                                            <p style="text-align:left;padding-left:10px;" t-field="o.customer_address" />
+                                                            <p style="text-align:left;padding-left:10px;" t-field="o.birth_date" />
+                                                            <p style="text-align:left;padding-left:10px;" t-field="o.bank_id" />
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <table class="table table-condensed" style="border:3px solid black !important;" >
+                                                    <t t-foreach = "cust_list" t-as="app">
+                                                        <tr>
+                                                            <td>
+                                                                <t t-esc="app['customer_name']" />
+                                                            </td>
+                                                            <td>
+                                                                <t t-esc="app['age']" />
+                                                            </td>
+                                                            <td>
+                                                                <t t-esc="app['bank_id']" />
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </center>
+                        <!-- </div> -->
+                    </div>
+                </t>
+            </t>
+        </t>
+        
+    </template>
+
+    <template id="report_customer_short_details" inherit_id="customer_report" primary="True" >
+        <xpath expr="//table/tr/td[2]" position="replace" >
+        </xpath>
+        
+    </template>
+
+</odoo>
