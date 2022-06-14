@@ -28,7 +28,6 @@
        "security/ir.model.access.csv",
        "security/security_access_bdata.xml",
        "reports/inherit_report_customer.xml"
-    
     ],
     # only loaded in demonstration mode
     'demo': [
