@@ -23,10 +23,15 @@
 
     # always loaded
     'data': [
+        "data/customer_data.xml",
+        "data/no_update_data.xml",
         "security/ir.model.access.csv",
         "wizard/pan_number_wizard_view.xml",
         "view/customer_view.xml",
-        "view/inherit_bank_view.xml"
+        "view/inherit_bank_view.xml",
+        "reports/report.xml",
+        "reports/customer_card.xml",
+        
     ],
     # only loaded in demonstration mode
     'demo': [

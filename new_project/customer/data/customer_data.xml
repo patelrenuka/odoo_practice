@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="customer_1" model="customer.details">
+        <field name="customer_name">dhara</field>
+        <field name="customer_email">dhara@gmail.com</field>
+        <field name="phone_no">9988776655</field>
+        <field name="customer_address">surat</field>
+        <field name="bank_id" ref="bank.bank_1"/>
+    </record>
+
+    <record id="customer_2" model="customer.details">
+        <field name="customer_name">palak</field>
+        <field name="customer_email">palak@gmail.com</field>
+        <field name="phone_no">9987459685</field>
+        <field name="customer_address">puna</field>
+        <field name="bank_id" ref="bank.bank_2"/> 
+    </record>
+
+    <record id="customer_3" model="customer.details">
+        <field name="customer_name">rajesh</field>
+        <field name="customer_email">rajesh@gmail.com</field>
+        <field name="phone_no">7458877665</field>
+        <field name="customer_address">baroda</field>
+        <field name="bank_id" ref="bank.bank_1"/>
+    </record>
+
+    <record id="customer_4" model="customer.details">
+        <field name="customer_name">dhiraj</field>
+        <field name="customer_email">dhiraj@gmail.com</field>
+        <field name="phone_no">9467812995</field>
+        <field name="customer_address">ahmedabad</field>
+        <field name="bank_id" ref="bank.bank_2"/>
+    </record>
+
+    <record id="customer_5" model="customer.details">
+        <field name="customer_name">kriyansh</field>
+        <field name="customer_email">kriyansh@gmail.com</field>
+        <field name="phone_no">7858776655</field>
+        <field name="customer_address">mumbai</field>
+        <field name="bank_id" ref="bank.bank_1"/>
+    </record>
+
+    <record id="customer_6" model="customer.details">
+        <field name="customer_name">rita</field>
+        <field name="customer_email">rita@gmail.com</field>
+        <field name="phone_no">9988123448</field>
+        <field name="customer_address">nashik</field>
+        <field name="bank_id" ref="bank.bank_2"/>
+    </record>
+
+    <record id="customer_7" model="customer.details">
+        <field name="customer_name">sumit</field>
+        <field name="customer_email">sumit@gmail.com</field>
+        <field name="phone_no">8659476655</field>
+        <field name="customer_address">ahmedabad</field>
+        <field name="bank_id" ref="bank.bank_1"/> 
+    </record>
+
+    <record id="customer_8" model="customer.details">
+        <field name="customer_name">kavita</field>
+        <field name="customer_email">kavita@gmail.com</field>
+        <field name="phone_no">9987459682</field>
+        <field name="customer_address">puna</field>
+        <field name="bank_id" ref="bank.bank_2"/> 
+    </record>
+
+    <record id="customer_9" model="customer.details">
+        <field name="customer_name">mayuri</field>
+        <field name="customer_email">mayuri@gmail.com</field>
+        <field name="phone_no">7458877663</field>
+        <field name="customer_address">baroda</field>
+        <field name="bank_id" ref="bank.bank_1"/>
+    </record>
+
+    <record id="customer_15" model="customer.details">
+        <field name="customer_name">gitu</field>
+        <field name="customer_email">git@gmail.com</field>
+        <field name="phone_no">9467812991</field>
+        <field name="customer_address">ahmedabad</field>
+        <field name="bank_id" ref="bank.bank_2"/>
+    </record>
+
+    <record id="customer_16" model="customer.details">
+        <field name="customer_name">ridhi</field>
+        <field name="customer_email">ridhi@gmail.com</field>
+        <field name="phone_no">7858776665</field>
+        <field name="customer_address">mumbai</field>
+        <field name="bank_id" ref="bank.bank_1"/>
+    </record>
+
+    <record id="customer_17" model="customer.details">
+        <field name="customer_name">jitik</field>
+        <field name="customer_email">jit@gmail.com</field>
+        <field name="phone_no">9988123498</field>
+        <field name="customer_address">nashik</field>
+        <field name="bank_id" ref="bank.bank_1"/>
+    </record>
+
+    <record id="customer_18" model="customer.details">
+        <field name="customer_name">suny</field>
+        <field name="customer_email">suny@gmail.com</field>
+        <field name="phone_no">8659476657</field>
+        <field name="customer_address">ahmedabad</field>
+        <field name="bank_id" ref="bank.bank_2"/> 
+    </record>
+
+    <record id="customer_13" model="customer.details">
+        <field name="customer_name">gyani</field>
+        <field name="customer_email">gyani@gmail.com</field>
+        <field name="phone_no">8659476615</field>
+        <field name="customer_address">ahmedabad</field>
+        <field name="bank_id" ref="bank.bank_2"/> 
+    </record>
+
+    <record id="customer_code_sequence_name" model="ir.sequence">
+        <field name="name">Customer Code</field>
+        <field name="code">customer.details</field>
+        <field name="prefix">CoDe</field>
+        <field name="number_increment" eval="1" />
+    </record>
+
+</odoo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="bank_1" model="bank_details">
+        <field name="name">HDFC</field>
+        <field name="branch">hdfc@gmail.com</field>
+        <field name="IFSC">hdfc45623</field>
+        <field name="bank_address">nikol</field>
+         
+    </record>
+
+    <record id="bank_2" model="bank_details">
+        <field name="name">Kotak</field>
+        <field name="branch">kotak@gmail.com</field>
+        <field name="IFSC">kotak4455</field>
+        <field name="bank_address">naroda</field>
+         
+    </record>
+
+</odoo>

@@ -11,7 +11,8 @@ import re
 
 class customer(models.Model):
     _name = "customer.details"
- 
+    
+    customer_seq_no = fields.Char("Customer Code", readonly=1)
     customer_name = fields.Char(string="Name" ,help="This is Customer Name",size=14)
     customer_email = fields.Char(string="Email",require=True)
     phone_no = fields.Char(string="Phone_No")
@@ -32,8 +33,30 @@ class customer(models.Model):
                             ('done','Done'),
                             ('cancel','Cancelled')
                             ], default="draft", string="Status")
+    sequence = fields.Integer("Customer Sequence")
     
+
+    @api.model
+    def create(self,vals):
+        vals['customer_seq_no'] = self.env['ir.sequence'].next_by_code("customer.details")
+        return super(customer, self).create(vals)
+       
+
+    def action_view_bank(self):
+        return {
+            'name':_('Bank'),
+            'res_model':'bank_details',
+            'view_mode':'list,form',
+            'context':{},
+            'domain':[('id','=',self.id)],
+            'target':'current',
+            'type':'ir.actions.act_window',
+        }
+
     
+    def print_report(self):
+        return self.env.ref('customer.report_action_id').report_action(self)
+
     @api.onchange('bank_id')
     def onchange_bank_id(self):
         if self.bank_id:
